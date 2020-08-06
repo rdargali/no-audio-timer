@@ -1,4 +1,4 @@
-# Siren Times
+# Siren Timer
 
 - **Visual based productivity timer for hearing impaired**
 
