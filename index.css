@@ -14,10 +14,9 @@ html {
 body {
   margin: 0;
   text-align: center;
-  font-family: "Inconsolata", monospace;
 }
 
-.display__time-left {
+.timer {
   font-weight: 100;
   font-size: 20rem;
   margin: 0;
@@ -35,7 +34,7 @@ body {
   display: flex;
 }
 
-.tpreset-minutes > * {
+.preset-minutes > * {
   flex: 1;
 }
 
@@ -48,15 +47,16 @@ body {
   flex: 1;
   border: 0;
   padding: 2rem;
+  text-emphasis: center;
 }
 
-.timer__button {
+.timer-nav-button {
   background: none;
   border: 0;
   cursor: pointer;
   color: white;
   font-size: 2rem;
-  text-transform: uppercase;
+
   background: rgba(0, 0, 0, 0.1);
   border-bottom: 3px solid rgba(0, 0, 0, 0.2);
   border-right: 1px solid rgba(0, 0, 0, 0.2);
@@ -64,13 +64,13 @@ body {
   font-family: "Inconsolata", monospace;
 }
 
-.timer__button:hover,
-.timer__button:focus {
+.timer-nav-button:hover,
+.timer-nav-button:focus {
   background: rgba(0, 0, 0, 0.2);
   outline: 0;
 }
 
-.display {
+.display-container {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -78,7 +78,7 @@ body {
   justify-content: center;
 }
 
-.display__end-time {
+.end-time {
   font-size: 4rem;
   color: white;
 }

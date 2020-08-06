@@ -1,6 +1,6 @@
-const timer = document.querySelector("#timer");
-const endTime = document.querySelector("#end-time");
-const btns = document.querySelectorAll("[data-time]");
+const timer = document.querySelector(".timer");
+const endTime = document.querySelector(".end-time");
+const btns = document.querySelectorAll("[timer-nav-button]");
 let countdown;
 
 const timerGo = (seconds) => {
@@ -25,9 +25,12 @@ const displayTimeLeft = (seconds) => {
   const minutes = Math.floor(seconds / 60);
   const remainderSeconds = seconds % 60;
   const hours = Math.floor(minutes / 60);
-  const display = `${hours} : ${minutes < 10 ? "0" : ""}${minutes} : ${
-    remainderSeconds < 10 ? "0" : ""
-  }${remainderSeconds}`;
+  let display = isNaN(seconds)
+    ? "Please enter a valid number"
+    : `${hours} : ${minutes < 10 ? "0" : ""}${minutes} : ${
+        remainderSeconds < 10 ? "0" : ""
+      }${remainderSeconds}`;
+
   // document.title = display;
   timer.innerHTML = display;
 };
@@ -39,7 +42,9 @@ const displayEndTime = (timestamp) => {
 
   const minutes = end.getMinutes();
   adjustedMinutes = minutes < 10 ? "0" : "";
-  endTime.innerHTML = `Done at ${amuricanHour} : ${adjustedMinutes}${minutes}`;
+  endTime.innerHTML = isNaN(timestamp)
+    ? ""
+    : `Done at ${amuricanHour} : ${adjustedMinutes}${minutes}`;
 };
 
 function startTimer() {

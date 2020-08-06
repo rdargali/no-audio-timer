@@ -11,19 +11,21 @@
 <body>
     <div class="timer-container">
         <div class="preset-minutes">
-            <button data-time="300" class="timer-nav">5 minutes</button>
-            <button data-time="600" class="timer-nav">10 minutes</button>
-            <button data-time="900" class="timer-nav">15 minutes</button>
-            <button data-time="1200" class="timer-nav">20 minutes</button>
-            <button data-time="1500" class="timer-nav">25 minutes</button>
+            <button data-time="300" class="timer-nav-button">5 minutes</button>
+            <button data-time="600" class="timer-nav-button">10 minutes</button>
+            <button data-time="900" class="timer-nav-button">15 minutes</button>
+            <button data-time="1200" class="timer-nav-button">20 minutes</button>
+            <button data-time="1500" class="timer-nav-button">25 minutes</button>
             <form name=customForm id="custom">
                 <input type="text" name="minutes" placeholder="Enter minutes">
             </form>
 
 
         </div>
-        <h1 id="timer"></h1>
-        <h3 id="end-time"></h3>
+        <div class="display-container">
+            <h1 class="timer"></h1>
+            <h3 class="end-time"></h3>
+        </div>
     </div>
 
     <script src="index.js"></script>
