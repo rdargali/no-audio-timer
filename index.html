@@ -4,10 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>No Audio Timer</title>
+    <title>Siren Timer</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
+    <div class="timer-container">
+        <div class="preset-minutes">
+            <button data-time="300" class="timer-nav">5 minutes</button>
+            <button data-time="600" class="timer-nav">10 minutes</button>
+            <button data-time="900" class="timer-nav">15 minutes</button>
+            <button data-time="1200" class="timer-nav">20 minutes</button>
+            <button data-time="1500" class="timer-nav">25 minutes</button>
+            <form name=customForm id="custom">
+                <input type="text" name="minutes" placeholder="Enter minutes">
+            </form>
+
+
+        </div>
+        <h1 id="timer"></h1>
+        <h3 id="end-time"></h3>
+    </div>
 
     <script src="index.js"></script>
 </body>
