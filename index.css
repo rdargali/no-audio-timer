@@ -1,6 +1,7 @@
 html {
   box-sizing: border-box;
   font-size: 10px;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
   background: rgb(2, 0, 36);
 
   /* css to insert dynamically vvv */

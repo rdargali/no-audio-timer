@@ -12,7 +12,7 @@ const timerGo = (seconds) => {
 
   countdown = setInterval(() => {
     const secondsLeft = Math.round((then - Date.now()) / 1000);
-    //make sure timer doesn't go below zero
+    //stopping timer at 0
     if (secondsLeft < 0) {
       clearInterval(countdown);
 
@@ -42,29 +42,14 @@ const displayTimeLeft = (seconds) => {
 const displayEndTime = (timestamp) => {
   const end = new Date(timestamp);
   const hour = end.getHours();
-  muricanHour = hour > 12 ? hour - 12 : hour;
-  const ampm = hour >= 12 ? "PM" : "AM";
+  const muricanHour = hour > 12 ? hour - 12 : hour == 0 ? 12 : hour;
+  const ampm = hour >= 12 ? "p.m." : "a.m.";
   const minutes = end.getMinutes();
   adjustedMinutes = minutes < 10 ? `0${minutes}` : minutes;
   endTime.innerHTML = isNaN(timestamp)
     ? ""
-    : `Done at ${muricanHour}:${adjustedMinutes}${ampm}`;
+    : `Done at ${muricanHour}:${adjustedMinutes} ${ampm}`;
 };
-
-// const sirenTimerAlert = (index) => {
-//   let colors = [
-//     "linear-gradient(90deg,rgb(37, 52, 182) 0%,rgba(31, 31, 215, 1) 35%,rgb(0, 89, 255) 100%)",
-//     "linear-gradient(90deg,rgb(224, 31, 31) 0%,rgb(165, 34, 17) 35%,rgb(245, 2, 2) 100%)",
-//   ];
-
-//   let body = document.querySelector("body");
-
-//   body.style.background = colors[index];
-//   index++;
-//   if ((index = colors.length)) {
-//     index = 0;
-//   }
-// };
 
 function startTimer() {
   const seconds = parseInt(this.dataset.time);
