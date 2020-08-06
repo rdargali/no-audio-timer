@@ -27,10 +27,11 @@ const timerGo = (seconds) => {
 const displayTimeLeft = (seconds) => {
   const minutes = Math.floor(seconds / 60);
   const remainderSeconds = seconds % 60;
+  const remainderMinutes = minutes % 60;
   const hours = Math.floor(minutes / 60);
   let display = isNaN(seconds)
     ? "Please enter a valid number"
-    : `${hours} : ${minutes < 10 ? "0" : ""}${minutes} : ${
+    : `${hours} : ${remainderMinutes < 10 ? "0" : ""}${remainderMinutes} : ${
         remainderSeconds < 10 ? "0" : ""
       }${remainderSeconds}`;
 
@@ -42,12 +43,12 @@ const displayEndTime = (timestamp) => {
   const end = new Date(timestamp);
   const hour = end.getHours();
   muricanHour = hour > 12 ? hour - 12 : hour;
-
+  const ampm = hour >= 12 ? "PM" : "AM";
   const minutes = end.getMinutes();
-  adjustedMinutes = minutes < 10 ? "0" : "";
+  adjustedMinutes = minutes < 10 ? `0${minutes}` : minutes;
   endTime.innerHTML = isNaN(timestamp)
     ? ""
-    : `Done at ${muricanHour}:${adjustedMinutes}${minutes}`;
+    : `Done at ${muricanHour}:${adjustedMinutes}${ampm}`;
 };
 
 // const sirenTimerAlert = (index) => {
