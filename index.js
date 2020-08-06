@@ -15,6 +15,9 @@ const timerGo = (seconds) => {
     //make sure timer doesn't go below zero
     if (secondsLeft < 0) {
       clearInterval(countdown);
+
+      document.querySelector("html").style.animation =
+        "blinkingBackground 1s infinite";
       return;
     }
     displayTimeLeft(secondsLeft);
@@ -47,6 +50,21 @@ const displayEndTime = (timestamp) => {
     : `Done at ${muricanHour}:${adjustedMinutes}${minutes}`;
 };
 
+// const sirenTimerAlert = (index) => {
+//   let colors = [
+//     "linear-gradient(90deg,rgb(37, 52, 182) 0%,rgba(31, 31, 215, 1) 35%,rgb(0, 89, 255) 100%)",
+//     "linear-gradient(90deg,rgb(224, 31, 31) 0%,rgb(165, 34, 17) 35%,rgb(245, 2, 2) 100%)",
+//   ];
+
+//   let body = document.querySelector("body");
+
+//   body.style.background = colors[index];
+//   index++;
+//   if ((index = colors.length)) {
+//     index = 0;
+//   }
+// };
+
 function startTimer() {
   const seconds = parseInt(this.dataset.time);
   timerGo(seconds);
@@ -58,6 +76,7 @@ buttons.forEach((btn) => {
 
 document.customForm.addEventListener("submit", function (e) {
   e.preventDefault();
+
   const minutes = this.minutes.value;
   timerGo(minutes * 60);
 });
