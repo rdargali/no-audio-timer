@@ -1,6 +1,6 @@
 const timer = document.querySelector(".timer");
 const endTime = document.querySelector(".end-time");
-const btns = document.querySelectorAll("[timer-nav-button]");
+const buttons = document.querySelectorAll("[data-time]");
 let countdown;
 
 const timerGo = (seconds) => {
@@ -38,13 +38,13 @@ const displayTimeLeft = (seconds) => {
 const displayEndTime = (timestamp) => {
   const end = new Date(timestamp);
   const hour = end.getHours();
-  amuricanHour = hour > 12 ? hour - 12 : hour;
+  muricanHour = hour > 12 ? hour - 12 : hour;
 
   const minutes = end.getMinutes();
   adjustedMinutes = minutes < 10 ? "0" : "";
   endTime.innerHTML = isNaN(timestamp)
     ? ""
-    : `Done at ${amuricanHour} : ${adjustedMinutes}${minutes}`;
+    : `Done at ${muricanHour}:${adjustedMinutes}${minutes}`;
 };
 
 function startTimer() {
@@ -52,7 +52,7 @@ function startTimer() {
   timerGo(seconds);
 }
 
-btns.forEach((btn) => {
+buttons.forEach((btn) => {
   btn.addEventListener("click", startTimer);
 });
 
