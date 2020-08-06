@@ -6,8 +6,7 @@
 
 ## Preview:
 
-<img src="src/assets/s1.png" height="400px" width="600px">
-<img src="src/assets/s2.gif" height="400px" width="600px">
+<img src="./assets/s2.gif" height="400px" width="600px">
 
 ## Live Site:
 
