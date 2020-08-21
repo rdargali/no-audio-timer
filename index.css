@@ -105,16 +105,13 @@ body {
 }
 
 .restart-button {
-  width: 12rem;
-  height: 4rem;
+  width: 11rem;
+  height: 3.7rem;
   border: none;
   border-radius: 10px;
   color: white;
-  font-size: 18px;
-  font-weight: bold;
+  cursor: pointer;
+  font-size: 2rem;
   background: rgb(2, 0, 36);
   display: none;
-}
-
-.restart-button:hover {
 }
