@@ -1,5 +1,6 @@
 const timer = document.querySelector(".timer");
 const endTime = document.querySelector(".end-time");
+const restartButton = document.querySelector(".restart-button");
 const buttons = document.querySelectorAll("[data-time]");
 let countdown;
 
@@ -18,6 +19,10 @@ const timerGo = (seconds) => {
 
       document.querySelector("html").style.animation =
         "blinkingBackground 1s infinite";
+
+      // endTime.style.display = "none";
+
+      restartButton.style.display = "block";
       return;
     }
     displayTimeLeft(secondsLeft);
@@ -65,4 +70,8 @@ document.customForm.addEventListener("submit", function (e) {
 
   const minutes = this.minutes.value;
   timerGo(minutes * 60);
+});
+
+restartButton.addEventListener("click", () => {
+  console.log("hello");
 });
