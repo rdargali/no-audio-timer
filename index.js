@@ -73,5 +73,8 @@ document.customForm.addEventListener("submit", function (e) {
 });
 
 restartButton.addEventListener("click", () => {
-  console.log("hello");
+  document.querySelector("html").style.animation = null;
+  restartButton.style.display = null;
+  timer.innerHTML = "";
+  endTime.innerHTML = "";
 });
