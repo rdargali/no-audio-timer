@@ -20,8 +20,6 @@ const timerGo = (seconds) => {
       document.querySelector("html").style.animation =
         "blinkingBackground 1s infinite";
 
-      // endTime.style.display = "none";
-
       restartButton.style.display = "block";
       return;
     }

@@ -4,7 +4,7 @@ html {
   font-family: "Trebuchet MS", Helvetica, sans-serif;
   background: rgb(2, 0, 36);
 
-  /* css to insert dynamically vvv */
+  /* css to insert dynamically */
   /* animation: blinkingBackground 1s infinite; */
 }
 
@@ -114,4 +114,25 @@ body {
   font-size: 2rem;
   background: rgb(2, 0, 36);
   display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .timer-nav-button {
+    display: none;
+  }
+
+  .minutes {
+    text-align: center;
+    font-size: 5vw;
+    color: white;
+    background: transparent;
+  }
+
+  .timer {
+    font-size: 17vw;
+  }
+
+  .end-time {
+    font-size: 5vw;
+  }
 }
